@@ -1,9 +1,8 @@
 /* USER CODE BEGIN Header */
 /**
   ******************************************************************************
-  * @file           : main.h
-  * @brief          : Header for main.c file.
-  *                   This file contains the common defines of the application.
+  * File Name          : app_freertos.h
+  * Description        : FreeRTOS applicative header file
   ******************************************************************************
   * @attention
   *
@@ -19,15 +18,17 @@
 /* USER CODE END Header */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __MAIN_H
-#define __MAIN_H
+#ifndef __APP_FREERTOS_H
+#define __APP_FREERTOS_H
 
 #ifdef __cplusplus
 extern "C" {
 #endif
-
 /* Includes ------------------------------------------------------------------*/
-#include "stm32u3xx_hal.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "main.h"
+#include "cmsis_os2.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -44,38 +45,34 @@ extern "C" {
 
 /* USER CODE END EC */
 
-/* Exported macro ------------------------------------------------------------*/
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+
+/* USER CODE END PD */
+
+/* Exported macro -------------------------------------------------------------*/
 /* USER CODE BEGIN EM */
 
 /* USER CODE END EM */
+extern osThreadId_t Task1msHandle;
+extern osThreadId_t TaskCommHandle;
 
-/* Exported functions prototypes ---------------------------------------------*/
-void Error_Handler(void);
+/* Exported function prototypes -----------------------------------------------*/
+/* USER CODE BEGIN FunctionPrototypes */
 
-/* USER CODE BEGIN EFP */
+/* USER CODE END FunctionPrototypes */
 
-/* USER CODE END EFP */
+void StartTask1ms(void *argument);
+void StartTask02(void *argument);
 
-/* Private defines -----------------------------------------------------------*/
-#define RCC_OSC32_IN_Pin GPIO_PIN_14
-#define RCC_OSC32_IN_GPIO_Port GPIOC
-#define RCC_OSC32_OUT_Pin GPIO_PIN_15
-#define RCC_OSC32_OUT_GPIO_Port GPIOC
-#define DEBUG_JTMS_SWDIO_Pin GPIO_PIN_13
-#define DEBUG_JTMS_SWDIO_GPIO_Port GPIOA
-#define DEBUG_JTCK_SWCLK_Pin GPIO_PIN_14
-#define DEBUG_JTCK_SWCLK_GPIO_Port GPIOA
-#define DEBUG_JTDI_Pin GPIO_PIN_15
-#define DEBUG_JTDI_GPIO_Port GPIOA
-#define DEBUG_JTDO_SWO_Pin GPIO_PIN_3
-#define DEBUG_JTDO_SWO_GPIO_Port GPIOB
+void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
-/* USER CODE BEGIN Private defines */
+/* Private application code --------------------------------------------------*/
+/* USER CODE BEGIN Application */
 
-/* USER CODE END Private defines */
+/* USER CODE END Application */
 
 #ifdef __cplusplus
 }
 #endif
-
-#endif /* __MAIN_H */
+#endif /* __APP_FREERTOS_H */
