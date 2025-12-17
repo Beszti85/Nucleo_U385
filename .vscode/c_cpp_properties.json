@@ -9,7 +9,8 @@
             "includePath": [
                 "${default}",
                 "${workspaceFolder}/ChipDrivers/Inc",
-                "${workspaceFolder}/FwLibraries/Inc"
+                "${workspaceFolder}/FwLibraries/Inc",
+                "${workspaceFolder}/Core/Inc"
             ]
         }
     ],
