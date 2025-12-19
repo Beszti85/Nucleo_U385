@@ -49,6 +49,8 @@ extern "C" {
 
 /* USER CODE END EM */
 
+void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
+
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -61,6 +63,8 @@ void Error_Handler(void);
 #define RCC_OSC32_IN_GPIO_Port GPIOC
 #define RCC_OSC32_OUT_Pin GPIO_PIN_15
 #define RCC_OSC32_OUT_GPIO_Port GPIOC
+#define NFC_GPO_IRQ_Pin GPIO_PIN_6
+#define NFC_GPO_IRQ_GPIO_Port GPIOA
 #define DEBUG_JTMS_SWDIO_Pin GPIO_PIN_13
 #define DEBUG_JTMS_SWDIO_GPIO_Port GPIOA
 #define DEBUG_JTCK_SWCLK_Pin GPIO_PIN_14
