@@ -8,10 +8,29 @@
             "cppStandard": "c++17",
             "includePath": [
                 "${default}",
+                "${workspaceFolder}/Core/Inc",
+                "${workspaceFolder}/Drivers/CMSIS/Include",
+                "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32U3xx/Include",
+                "${workspaceFolder}/Drivers/STM32U3xx_HAL_Driver/Inc",
                 "${workspaceFolder}/ChipDrivers/Inc",
-                "${workspaceFolder}/FwLibraries/Inc",
-                "${workspaceFolder}/Core/Inc"
-            ]
+                "${workspaceFolder}/FwLibraries/Inc"
+            ],
+            "defines": [
+                "STM32U585xx",
+                "USE_HAL_DRIVER"
+            ],
+            "browse": {
+                "path": [
+                    "${workspaceFolder}/Core/Inc",
+                    "${workspaceFolder}/Drivers/CMSIS/Include",
+                    "${workspaceFolder}/Drivers/CMSIS/Device/ST/STM32U3xx/Include",
+                    "${workspaceFolder}/Drivers/STM32U3xx_HAL_Driver/Inc",
+                    "${workspaceFolder}/ChipDrivers/Inc",
+                    "${workspaceFolder}/FwLibraries/Inc"
+                ],
+                "limitSymbolsToIncludedHeaders": true,
+                "databaseFilename": "${workspaceFolder}/.vscode/browse.vc.db"
+            }
         }
     ],
     "version": 4
